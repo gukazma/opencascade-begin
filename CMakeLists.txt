@@ -14,7 +14,7 @@ message("Configure project: ${ROOT_NAME}")
 project(${ROOT_NAME} VERSION 0.1 LANGUAGES CXX)
 
 option(ENABLE_DOCS "Enable doxygen docs" ON)
-option(ENABLE_QTAPP "Enable config Qt app" OFF)
+option(ENABLE_QTAPP "Enable config Qt app" ON)
 option(PUBLISH_APP "PUBLISH APP" OFF)
 
 # just for qt
@@ -42,6 +42,8 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
       "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there."
   )
 endif()
+
+find_package(OpenCASCADE CONFIG REQUIRED)
 
 add_subdirectory(Modules)
 add_subdirectory(Apps)

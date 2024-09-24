@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "OCCWidget.h"
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    OCCWidget* m_occWidget = nullptr;
 };
 
 #endif // MAINWINDOW_H
